@@ -25,7 +25,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://127.0.0.1:5000/1",
+			"url": "http://127.0.0.1:5000/api/3",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -36,12 +36,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1660319519706,
+			"time": 1660334832099,
 			"name": "Update item",
 			"description": "",
 			"collectionId": "a604ca3c-fbdd-ba2d-0844-3503d5bc55e9",
 			"responses": [],
-			"rawModeData": "{\n\t\"name\":\"dirty car\"\n}"
+			"rawModeData": "{\n\t\"name\":\"go to the cinema\"\n"
 		},
 		{
 			"id": "931ac3bc-4a9b-edd0-fc25-bfc4cd9f2599",
@@ -60,7 +60,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://127.0.0.1:5000/",
+			"url": "http://127.0.0.1:5000/api/",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -71,18 +71,18 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1660318890268,
+			"time": 1660334858656,
 			"name": "add item",
 			"description": "",
 			"collectionId": "a604ca3c-fbdd-ba2d-0844-3503d5bc55e9",
 			"responses": [],
-			"rawModeData": "{\n\t\"name\":\"Learn python programming\"\n}"
+			"rawModeData": "{\n\t\"name\":\"eat food\"\n\t\n}"
 		},
 		{
 			"id": "b884e0f7-8fff-53ff-1720-44b2e4a2096d",
 			"headers": "",
 			"headerData": [],
-			"url": "http://127.0.0.1:5000",
+			"url": "http://127.0.0.1:5000/api",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -94,7 +94,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1660319442211,
+			"time": 1660334803326,
 			"name": "Get items",
 			"description": "",
 			"collectionId": "a604ca3c-fbdd-ba2d-0844-3503d5bc55e9",
@@ -111,7 +111,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://127.0.0.1:5000/2",
+			"url": "http://127.0.0.1:5000/api/3",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -122,7 +122,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1660319704044,
+			"time": 1660334830089,
 			"name": "delete item",
 			"description": "",
 			"collectionId": "a604ca3c-fbdd-ba2d-0844-3503d5bc55e9",

@@ -1,4 +1,3 @@
-from pickle import TRUE
 from flask import Flask
 
 app = Flask(__name__)

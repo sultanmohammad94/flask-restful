@@ -1,19 +1,15 @@
-from flask import Flask, request
-from flask_restful import Resource, Api, marshal_with, fields
-from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-DATABASE_NAME = 'flask_dev.db'
-app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DATABASE_NAME}"
-db = SQLAlchemy(app)
-# Database
-class Task(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=True)
-    
-    def __repr__(self) -> str:
-        return self.name
-
+from flask_restful import (
+    Resource,
+    Api,
+    marshal_with,
+    fields,
+    )
+from flask import request
+from app import models
+from app import app
+from app.models import db, Task
+#REST API
+api = Api(app)
 
 #We use marshal as django serializer
 #here we list all the files we want to see
@@ -21,9 +17,6 @@ tasks_fields = {
     'id':fields.Integer,
     'name':fields.String,
 }
-#REST API
-api = Api(app)
-
 class Items(Resource):
     
     @marshal_with(tasks_fields)
@@ -65,9 +58,5 @@ class Item(Resource):
         return tasks
     
 #REST-API Routing
-api.add_resource(Items,'/')
-api.add_resource(Item,'/<int:pk>')
-
-#Main App
-if __name__ == "__main__":
-    app.run(debug=True)
+api.add_resource(Items,'/api/')
+api.add_resource(Item,'/api/<int:pk>')

@@ -5,9 +5,9 @@
 
 {% block body %}
 <h1>Update Task</h1>
-    <form action="/update/{{task.id}}" method="POST">
+    <form action="/delete/{{task.id}}" method="POST">
         <label for="task_name">Task</label>
         <input type="text" name="task_name" id="task_name">
-        <input type="submit" value="Update Task">
+        <input type="submit" value="Delete Task">
     </form>
 {% endblock body %}

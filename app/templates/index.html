@@ -1,12 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <h1>Hello world</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block head %}
+<title>index</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock head %}
+
+
+{% block body %}
+<h1 class="section-header">Flask To do tasks</h1>
+<div class="row gx-5">
+  <div class="col-8">
+    {% if tasks|length > 0 %}
+    <table class="table mt-4">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">ِAction</th>
+              
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+              {% for task in tasks %}
+              <tr>
+                  <th scope="row">{{task.id}}</th>
+                  <td>{{task.name}}</td>
+                  <td>
+                      <div>
+                          <a class="btn btn-primary" href="/update/{{task.id}}" role="button">Update</a>
+                          <a class="btn btn-danger" href="/delete/{{task.id}}" role="button">Delete</a>
+                      </div>
+              </td>
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+      </div>
+      <form action="/" method="POST" class="col-4 m-auto">
+        <input type="text" name="task_name" id="task_name" placeholder="Task description" class="form-control mt-2 mb-2">
+        <input type="submit" value="Add task" class="btn btn-success">
+      </form>
+</div>
+
+
+
+{% endblock body %}
